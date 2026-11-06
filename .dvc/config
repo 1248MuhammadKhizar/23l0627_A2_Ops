@@ -1,0 +1,4 @@
+[core]
+    remote = dagshub
+['remote "dagshub"']
+    url = https://dagshub.com/1248MuhammadKhizar/23l0627_A2_Ops.dvc
