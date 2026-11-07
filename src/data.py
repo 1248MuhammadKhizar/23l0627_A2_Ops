@@ -20,13 +20,13 @@ augment = tf.keras.Sequential([
     tf.keras.layers.RandomContrast(0.1, seed=SEED),
 ], name="augment")
 
-def make_ds(csv, training=False, batch=BATCH):
+def make_ds(csv, training=False, batch=BATCH, aug=True):
     df = pd.read_csv(csv)
     ds = tf.data.Dataset.from_tensor_slices((df.path.values, df.label.values))
     if training:
         ds = ds.shuffle(len(df), seed=SEED, reshuffle_each_iteration=True)
     ds = ds.map(_load, num_parallel_calls=tf.data.AUTOTUNE)
-    if training:
+    if training and aug:
         ds = ds.map(lambda x, y: (augment(x, training=True), y),
                     num_parallel_calls=tf.data.AUTOTUNE)
     return ds.batch(batch).prefetch(tf.data.AUTOTUNE)

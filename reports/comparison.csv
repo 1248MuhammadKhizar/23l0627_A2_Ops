@@ -1,0 +1,7 @@
+run,lr,aug,unfrozen,size,backbone,val_loss,val_auc,val_f1,run_id
+r1_base,0.001,1,0,128,mobilenetv2,0.4957,0.8424,0.8101,cbc80b645f9d4632bd85c73ab027a6fc
+r3_no_aug,0.001,0,0,128,mobilenetv2,0.4988,0.8338,0.8,1ce7f50edac4407d9ec7a8844e9b544f
+r6_efficientnet,0.001,1,0,128,efficientnetb0,0.5135,0.8292,0.8063,570fd08072d84eb183337c8c2040d000
+r2_lr_1e-4,0.0001,1,0,128,mobilenetv2,0.5753,0.7663,0.7539,d3300ccbaedc49599ff13a5e3f08d3b4
+r5_size96,0.001,1,0,96,mobilenetv2,0.5846,0.7684,0.7526,5f4cbebe7c6b493cab3db95d5e3ae7fc
+r4_unfreeze10,0.001,1,10,128,mobilenetv2,0.6876,0.5,0.7137,7d20eb09a8094ff2b807427b34e1f37b
