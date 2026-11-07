@@ -6,3 +6,6 @@ mlruns/
 
 toy_tuner/
 tuner_dir/
+
+mlflow_toy.db
+mlartifacts/
