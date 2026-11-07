@@ -2,3 +2,5 @@
     remote = dagshub
 ['remote "dagshub"']
     url = https://dagshub.com/1248MuhammadKhizar/23l0627_A2_Ops.dvc
+    connect_timeout = 60
+    read_timeout = 900
