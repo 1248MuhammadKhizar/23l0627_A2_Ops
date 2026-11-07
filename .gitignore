@@ -3,3 +3,6 @@
 __pycache__/
 *.pyc
 mlruns/
+
+toy_tuner/
+tuner_dir/
