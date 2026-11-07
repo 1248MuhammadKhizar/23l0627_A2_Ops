@@ -1,14 +1,15 @@
-﻿import tensorflow as tf
+﻿import os
+import tensorflow as tf
 import pandas as pd
 
-IMG_SIZE = 224
+IMG_SIZE = int(os.environ.get("IMG_SIZE", "112"))
 BATCH = 32
 SEED = 42
 
 def _load(path, label):
     raw = tf.io.read_file(path)
-    img = tf.io.decode_image(raw, channels=3, expand_animations=False)  # forces RGB
-    img = tf.image.resize(img, (IMG_SIZE, IMG_SIZE))                    # stretches, ignores aspect ratio
+    img = tf.io.decode_image(raw, channels=3, expand_animations=False)
+    img = tf.image.resize(img, (IMG_SIZE, IMG_SIZE))
     img.set_shape((IMG_SIZE, IMG_SIZE, 3))
     return img, tf.cast(label, tf.float32)
 

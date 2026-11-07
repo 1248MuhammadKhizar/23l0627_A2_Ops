@@ -1,7 +1,9 @@
-﻿import tensorflow as tf
+﻿import os
+import tensorflow as tf
 from tensorflow.keras import layers, models
 
-def build_baseline(img_size=224):
+def build_baseline(img_size=None):
+    img_size = img_size or int(os.environ.get("IMG_SIZE", "112"))
     inp = layers.Input((img_size, img_size, 3))
     x = layers.Rescaling(1.0 / 255)(inp)
     for filters in (32, 64, 128):
@@ -23,8 +25,3 @@ def build_baseline(img_size=224):
 if __name__ == "__main__":
     m = build_baseline()
     m.summary()
-    print()
-    print(f"{'Layer':32s}{'Output shape':26s}{'Params':>10s}")
-    for l in m.layers:
-        print(f"{l.name:32s}{str(l.output.shape):26s}{l.count_params():>10,d}")
-    print("Total params:", f"{m.count_params():,}")

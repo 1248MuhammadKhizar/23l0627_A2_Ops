@@ -9,3 +9,7 @@ tuner_dir/
 
 mlflow_toy.db
 mlartifacts/
+
+toy_loss.png
+toy_model.keras
+models/
