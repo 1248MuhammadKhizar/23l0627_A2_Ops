@@ -1,0 +1,9 @@
+== Stage 1 (backbone frozen, lr 1e-3) ==
+Backbone layers trainable: 0 of 154
+Head layers trainable: ['dense', 'dense_1']
+Backbone trainable names: none (frozen)
+
+== Stage 2 (last block unfrozen, lr 1e-5) ==
+Backbone layers trainable: 6 of 154
+Head layers trainable: ['dense', 'dense_1']
+Backbone trainable names: ['block_16_expand', 'block_16_expand_relu', 'block_16_depthwise', 'block_16_depthwise_relu', 'block_16_project', 'Conv_1']
