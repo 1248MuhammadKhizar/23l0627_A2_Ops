@@ -1,0 +1,14 @@
+.venv
+.git
+.env
+data/raw
+data/*.csv
+mlruns
+reports
+artifacts
+toy_*
+tuner_dir
+__pycache__
+*.pyc
+instance
+*.db
