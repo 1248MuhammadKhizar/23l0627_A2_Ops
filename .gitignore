@@ -15,3 +15,6 @@ toy_model.keras
 models/
 
 artifacts/
+
+instance/
+visionguard.db

@@ -1,0 +1,8 @@
+﻿<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VisionGuard</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+<nav><span class="brand">VisionGuard</span><a href="/">Check an image</a><a href="/history">History</a></nav>
+<main>{% block content %}{% endblock %}</main>
+<footer>VisionGuard is a statistical model, not proof. Treat its verdict as a hint.</footer>
+</body></html>

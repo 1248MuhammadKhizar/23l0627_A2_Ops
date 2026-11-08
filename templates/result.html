@@ -1,0 +1,9 @@
+﻿{% extends "base.html" %}{% block content %}
+<h1>Result</h1>
+<div class="card {{ 'ai' if r.label == 'AI-generated' else 'real' }}">
+<p class="verdict">{{ r.label }}</p>
+<p>Confidence: <b>{{ '%.1f' % (r.confidence * 100) }}%</b> (file: {{ filename }})</p>
+<p class="small">Model: {{ r.model }} | threshold {{ '%.2f' % r.threshold }} | p(AI) = {{ '%.3f' % r.p_ai }}</p>
+<p class="caveat">Caveat: this model was trained on under 700 images and is wrong on roughly 1 in 4 test images. Paintings and heavily compressed images are especially error-prone.</p>
+</div><a class="btn" href="/">Check another</a>
+{% endblock %}
